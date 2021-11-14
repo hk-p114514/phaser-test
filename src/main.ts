@@ -1,24 +1,25 @@
-import * as Phaser from 'phaser';
-import { Preload } from './Preload';
+import { Types } from 'phaser';
+import { Scenes } from './scenes';
 
-class Main extends Phaser.Game {
-	constructor() {
-		const config: Phaser.Types.Core.GameConfig = {
-			type: Phaser.AUTO,
-			width: 600, // 画面の横幅
-			height: 400, // 画面の縦幅
-			backgroundColor: '#aaa',
-		};
+const config: Types.Core.GameConfig = {
+	width: 360,
+	height: 640,
+	type: Phaser.AUTO,
+	parent: 'game',
+	scale: {
+		mode: Phaser.Scale.FIT,
+		autoCenter: Phaser.Scale.CENTER_BOTH,
+		parent: 'game',
+	},
+	scene: Scenes,
+};
+
+class Game extends Phaser.Game {
+	constructor(config: Types.Core.GameConfig) {
 		super(config);
-
-		// シーンにキーを割り振る
-		this.scene.add('preload', Preload, false);
-
-		// ロード開始
-		this.scene.start('Boot');
 	}
 }
 
-window.onload = () => {
-	const GameApp: Phaser.Game = new Main();
-};
+window.addEventListener('load', () => {
+	new Game(config);
+});
