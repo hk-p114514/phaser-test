@@ -1,3 +1,4 @@
+import 'phaser';
 class MainScene extends Phaser.Scene {
 	// @ts-ignore
 	private acorn: Phaser.Physics.Arcade.Image;
