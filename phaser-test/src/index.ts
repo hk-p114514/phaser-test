@@ -1,14 +1,13 @@
 import 'phaser';
-import { Types } from 'phaser';
-import { Game } from './Game';
-import { Scenes } from './Scenes';
+import { Game, Types } from 'phaser';
+import { Main } from './Main';
 
 const config: Types.Core.GameConfig = {
 	width: 800,
 	height: 600,
 	type: Phaser.AUTO,
 	parent: 'game',
-	scene: Scenes,
+	scene: Main,
 	physics: {
 		default: 'arcade',
 		arcade: {
