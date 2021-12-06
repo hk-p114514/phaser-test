@@ -1,4 +1,6 @@
 {
-	"workbench.colorTheme": "monokai-charcoal (green)",
-	"cSpell.words": ["preinstall", "tweens", "yoyo"]
+  "workbench.colorTheme": "monokai-charcoal (green)",
+  "cSpell.words": ["preinstall", "tweens", "yoyo"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }

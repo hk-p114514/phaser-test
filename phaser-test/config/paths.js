@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
 	// source directory
-	src: path.join(__dirname, './src'),
+	src: path.join(__dirname, '../src'),
 
 	// production directory
-	dist: path.join(__dirname, './dist'),
+	dist: path.join(__dirname, '../dist'),
 
 	// public directory
-	public: path.join(__dirname, './public'),
+	public: path.join(__dirname, '../public'),
 };
