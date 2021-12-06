@@ -1,30 +1,36 @@
-// webpack config file for development
-const { merge } = require('webpack-merge');
+const { merge } = require('webpack-merge')
 
-const common = require('./webpack.common');
+const common = require('./webpack.common')
 
 module.exports = merge(common, {
-	mode: 'development',
+  // Set the mode to development or production
+  mode: 'development',
 
-	devServer: {
-		historyApiFallback: true,
-		open: true,
-		compress: true,
-		hot: true,
-		port: 8080,
-	},
+  // Control how source maps are generated
+  devtool: 'inline-source-map',
 
-	module: {
-		rules: [
-			{
-				test: /\.(sass|scss|css)$/,
-				use: [
-					'style-loader',
-					{
-						loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, modules: false }
-					},
-				]
-			}
-		]
-	}
+  // Spin up a server for quick development
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    compress: true,
+    hot: true,
+    port: 8080,
+  },
+
+  module: {
+    rules: [
+      // Styles: Inject CSS into the head with source maps
+      {
+        // test: /\.(sass|scss|css)$/,
+        //   use: [
+        //     'style-loader',
+        //     {
+        //       loader: 'css-loader',
+        //       options: { sourceMap: true, importLoaders: 1, modules: false },
+        //     },
+        //   ],
+      },
+    ],
+  },
 })

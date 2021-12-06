@@ -6,7 +6,7 @@ class Main extends Scene {
 	}
 
 	preload() {
-		this.load.image('logo', '/images/logo.png');
+		this.load.image('logo', '@/images/logo.png');
 	}
 
 	create() {
